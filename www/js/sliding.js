@@ -1,9 +1,10 @@
 var pictures = ['http://i0.kym-cdn.com/photos/images/newsfeed/000/669/034/120.gif', 'https://media.giphy.com/media/X93eEahgIFlcc/giphy.gif', 'http://www.ipwatchdog.com/wp-content/uploads/2015/12/donald-trump-300-300x300.jpg', 'http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=139607809', 'http://www.hercampus.com/sites/default/files/styles/full_width_embed/public/2016/02/24/kanye-scowl-resting-bitch-face-300x300.jpg', 'http://cdn01.cdn.justjared.com/wp-content/uploads/headlines/2015/10/drake-hotline-bling-music-video.jpg', 'http://orig10.deviantart.net/8471/f/2014/239/3/7/profile_picture_by_the__clarinet__squid-d7wul0f.jpg', 'http://www.gloryofwar.com/forums/download/file.php?avatar=94_1463321500.gif', 'https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTU5NTgxMTk2/bob-ross-9464216-1-402.jpg' ];
 
 var context = document.getElementById('puzzle').getContext('2d');
-
+var random = Math.floor(Math.random() * pictures.length);
 var img = new Image();
-img.src = pictures[Math.floor(Math.random() * pictures.length)];
+img.src = pictures[random];
+console.log(pictures[random])
 img.addEventListener('load', drawTiles, false);
 
 var boardSize = document.getElementById('puzzle').width;
