@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Sliding Puzzle</title>
+  <style>
+  .picture {
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <h2>Puzzel</h2>
+  </div>
+  <div id="slider">
+    <form>
+      <label>Makkelijk</label>
+      <input type="range" id="scale" value="4" min="3" max="5" step="1">
+      <label>Moeilijk</label>
+    </form>
+    <br>
+  </div>
+  <div id="main" class="main">
+    <canvas style="border: thick solid #0000FF" id="puzzle" width="480px" height="480px"></canvas>
+  </div>
+  <script src="./Sliding Puzzle_files/sliding.js"></script>
+
+
+</body></html>
