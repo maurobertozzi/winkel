@@ -1,4 +1,4 @@
-var pictures = ['http://hideyourarms.com/wp-content/uploads/2009/06/robots57-480x480.jpg', 'http://www.packcamera.com/wp-content/uploads/2009/09/e-mark-480x480.jpg'];
+var pictures = ['http://hideyourarms.com/wp-content/uploads/2009/06/robots57-480x480.jpg', 'http://www.packcamera.com/wp-content/uploads/2009/09/e-mark-480x480.jpg', 'https://lh3.googleusercontent.com/YCtpWrbqEJoR0rOA9xTylqZhZX_1wWsvJNWVaEgoJ_nz5ts1Ln6iB8csmbyOsfSxtXy6=w300'];
 
 var context = document.getElementById('puzzle').getContext('2d');
 
