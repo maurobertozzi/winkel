@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -13,7 +15,12 @@
   <div id="title">
     <h2>Puzzel</h2>
   </div>
-  <div id="slider">
+<div id="knoppen">
+  <button onclick="Volwassene()">Volwassene</button>
+  <button onclick="Kind()">Kind</button>
+</div>
+<div id="puzzel" style="display: none;">
+<div id="slider">
     <form>
       <label>Makkelijk</label>
       <input type="range" id="scale" value="4" min="3" max="5" step="1">
@@ -25,6 +32,20 @@
     <canvas style="border: thick solid #0000FF" id="puzzle" width="300px" height="300px"></canvas>
   </div>
   <script src="js/sliding.js"></script>
-
+</div>
 
 </body></html>
+<script>
+  puzzel = document.getElementById('puzzel');
+  knoppen = document.getElementById('knoppen');
+  function Volwassene(){
+    knoppen.style.display = "none";
+    puzzel.style.display = "block";
+  }
+  function Kind(){
+    knoppen.style.display = "none";
+    puzzel.style.display = "block";
+
+  }
+
+</script>
