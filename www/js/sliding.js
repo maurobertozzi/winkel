@@ -1,5 +1,13 @@
 var pictures = ['http://i0.kym-cdn.com/photos/images/newsfeed/000/669/034/120.gif', 'https://media.giphy.com/media/X93eEahgIFlcc/giphy.gif', 'http://www.ipwatchdog.com/wp-content/uploads/2015/12/donald-trump-300-300x300.jpg', 'http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=139607809', 'http://www.hercampus.com/sites/default/files/styles/full_width_embed/public/2016/02/24/kanye-scowl-resting-bitch-face-300x300.jpg', 'http://cdn01.cdn.justjared.com/wp-content/uploads/headlines/2015/10/drake-hotline-bling-music-video.jpg', 'http://orig10.deviantart.net/8471/f/2014/239/3/7/profile_picture_by_the__clarinet__squid-d7wul0f.jpg', 'http://www.gloryofwar.com/forums/download/file.php?avatar=94_1463321500.gif', 'https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTU5NTgxMTk2/bob-ross-9464216-1-402.jpg' ];
 
+var child = {'easy':['ez', 'fix'],
+            'normal':['normal','fix'],
+            'hard':['hard', 'fix']};
+
+var adult = {'easy':['5%', '10%'],
+            'normal':['20%','25%'],
+            'hard':['30%', '50%']};
+
 var context = document.getElementById('puzzle').getContext('2d');
 var random = Math.floor(Math.random() * pictures.length);
 var img = new Image();
@@ -9,6 +17,8 @@ img.addEventListener('load', drawTiles, false);
 
 var boardSize = document.getElementById('puzzle').width;
 var tileCount = document.getElementById('scale').value;
+var difficulty = 'normal';
+
 
 var tileSize = boardSize / tileCount;
 
@@ -30,6 +40,13 @@ document.getElementById('scale').onchange = function() {
   tileSize = boardSize / tileCount;
   setBoard();
   drawTiles();
+    if (tileCount == 3){
+        difficulty = 'easy';
+    }else if(tileCount == 4){
+        difficulty = 'normal';
+    }else{
+        difficulty = 'hard';
+    }
 };
 
 document.getElementById('puzzle').onclick = function(e) {
@@ -40,7 +57,15 @@ document.getElementById('puzzle').onclick = function(e) {
     drawTiles();
   }
   if (solved) {
-    setTimeout(function() {alert("je heb gewonnen!");}, 500);
+    setTimeout(function() {
+      if (Kind){
+        alert("Je hebt een " + child[difficulty][Math.floor(Math.random() * child[difficulty].length)] + ' gewonnen!');
+      }else{
+        alert("U heeft " + adult[difficulty][Math.floor(Math.random() * adult[difficulty].length)] + ' korting gewonnen!');
+      }
+      // alert("je heb gewonnen!");
+
+    }, 500);
   }
 };
 
