@@ -56,9 +56,10 @@ document.getElementById('puzzle').onclick = function(e) {
     slideTile(emptyLoc, clickLoc);
     drawTiles();
   }
+  solved = true;
   if (solved) {
     setTimeout(function() {
-      if (Kind){
+      if (gebruiker_Kind){
         alert("Je hebt een " + child[difficulty][Math.floor(Math.random() * child[difficulty].length)] + ' gewonnen!');
       }else{
         alert("U heeft " + adult[difficulty][Math.floor(Math.random() * adult[difficulty].length)] + ' korting gewonnen!');
