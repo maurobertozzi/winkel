@@ -56,7 +56,7 @@ document.getElementById('puzzle').onclick = function(e) {
     slideTile(emptyLoc, clickLoc);
     drawTiles();
   }
-  solved = true;
+  // solved = true;
   if (solved) {
     setTimeout(function() {
       if (gebruiker_Kind){
