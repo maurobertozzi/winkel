@@ -25,7 +25,10 @@ var emptyLoc = new Object;
 var solved = false;
 
 var boardParts;
+var locked = 0;
+
 function newBoard() {
+    locked = 0;
     random = Math.floor(Math.random() * pictures.length);
     img.src = pictures[random];
     console.log(pictures[random])
@@ -61,13 +64,15 @@ document.getElementById('puzzle').onclick = function(e) {
     drawTiles();
   }
   // solved = true;
-  if (solved) {
+  if (solved && locked == 0) {
+
     setTimeout(function() {
       if (gebruiker_Kind){
         alert("Je hebt een " + child[difficulty][Math.floor(Math.random() * child[difficulty].length)] + ' gewonnen!');
       }else{
         alert("U heeft " + adult[difficulty][Math.floor(Math.random() * adult[difficulty].length)] + ' korting gewonnen!');
       }
+      locked = 1;
       // alert("je heb gewonnen!");
 
     }, 500);
